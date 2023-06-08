@@ -58,7 +58,6 @@ $accounts = $accounts ? unserialize($accounts) : [];
                                 </form>
                             </td>
 
-
                             <td>
                                 <form action="./delete-account.php?id=<?= $account['id'] ?>" method="post">
                                     <button type="submit" class="btn btn-danger">IŠTRINTI</button>

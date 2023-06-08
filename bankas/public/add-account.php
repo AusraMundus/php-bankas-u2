@@ -43,19 +43,19 @@ die;
             <form class="row g-3" form action="./add-account.php" method="post">
                 <div class="col-md-6">
                     <label for="firstName" class="form-label">Vardas</label>
-                    <input type="text" class="form-control" name="firstName">
+                    <input type="text" class="form-control" name="firstName" placeholder="...">
                 </div>
                 <div class="col-md-6">
                 <label for="lastName" class="form-label">Pavardė</label>
-                    <input type="text" class="form-control" name="lastName">
+                    <input type="text" class="form-control" name="lastName" placeholder="...">
                 </div>
-                <div class="col-12">
+                <div class="col-md-6">
                     <label for="personalId" class="form-label">Asmens kodas</label>
-                    <input type="text" class="form-control" name="personalId" placeholder="A. K.">
+                    <input type="text" class="form-control" name="personalId" placeholder="...">
                 </div>
-                <div class="col-12">
+                <div class="col-md-6">
                     <label for="accountNo" class="form-label">Banko sąskaitos numeris</label>
-                    <input type="text" class="form-control" name="accountNo" placeholder="LT...">
+                    <input type="text" class="form-control" name="accountNo" placeholder="LT ...">
                 </div>
                 
                 <div class="col-12">
