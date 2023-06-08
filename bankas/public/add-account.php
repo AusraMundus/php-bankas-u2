@@ -59,15 +59,12 @@ die;
                 </div>
                 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-success">Pridėti sąskaitą</button>
+                    <button type="submit" class="btn btn-success">IŠSAUGOTI</button>
                 </div>
             </form>
 
         </div>
     </div>
-
-
-
 
 </body>
 

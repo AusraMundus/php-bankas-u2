@@ -45,8 +45,20 @@ $accounts = $accounts ? unserialize($accounts) : [];
                             <td><?= $account['personalId'] ?></td>
                             <td><?= $account['accountNo'] ?></td>
                             <td>0 Eur</td>
-                            <td><button class="btn btn-success">PRIDĖTI</button></td>
-                            <td><button class="btn btn-warning">IŠIMTI</button></td>
+
+                            <td>
+                                <form action="./add-money.php?id=<?= $account['id'] ?>" method="post">
+                                    <button class="btn btn-success">PRIDĖTI</button>
+                                </form>
+                            </td>
+
+                            <td>
+                                <form action="./withdraw-money.php?id=<?= $account['id'] ?>" method="post">
+                                    <button class="btn btn-warning">IŠIMTI</button>
+                                </form>
+                            </td>
+
+
                             <td>
                                 <form action="./delete-account.php?id=<?= $account['id'] ?>" method="post">
                                     <button type="submit" class="btn btn-danger">IŠTRINTI</button>
