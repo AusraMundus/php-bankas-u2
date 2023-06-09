@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <form class="row g-3" form action="./withdraw-money.php?id=<?= $accountId ?>" method="post">
                 <div class="col-12">
                     <label for="amount" class="form-label">Įveskite sumą</label>
-                    <input type="number" class="form-control" name="amount" placeholder="...">
+                    <input type="number" class="form-control" name="amount" placeholder="..." required>
                 </div>
 
                 <div class="col-12">

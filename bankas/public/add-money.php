@@ -21,11 +21,6 @@ if ($accountId) {
 $accountId = (int)$_GET['id'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    if ($_POST['amount'] <= 0) {
-        header('Location: ./add-money.php?id=' . $accountId . '&alert=8');
-        die;
-    }
-
     foreach ($accounts as &$a) {
         if ($a['id'] == $accountId) {
             $a['balance'] += $_POST['amount'];
