@@ -90,15 +90,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="card-body">
 
             <form class="row g-3" form action="./add-account.php" method="post">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="firstName" class="form-label">Vardas</label>
                     <input type="text" class="form-control" name="firstName" placeholder="Įveskite vardą">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="lastName" class="form-label">Pavardė</label>
                     <input type="text" class="form-control" name="lastName" placeholder="Įveskite pavardę">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="personalId" class="form-label">Asmens kodas</label>
                     <input type="text" class="form-control" name="personalId" placeholder="Įveskite asmens kodą">
                 </div>
@@ -114,6 +114,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <button type="submit" class="btn btn-success">IŠSAUGOTI</button>
                 </div>
             </form>
+
+            <div class="col-12 link">
+                <a href="http://localhost/php-bankas-u2/bankas/public/">Grįžti į pagrindinį</a>
+            </div>
 
         </div>
     </div>

@@ -86,8 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </form>
 
-            <div class="col-12">
-                <a href="http://localhost/php-bankas-u2/bankas/public/">Grįžti į Sąskaitų sąrašą</a>
+            <div class="col-12 link">
+                <a href="http://localhost/php-bankas-u2/bankas/public/">Grįžti į pagrindinį</a>
             </div>
 
         </div>

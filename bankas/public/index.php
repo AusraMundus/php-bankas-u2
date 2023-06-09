@@ -24,7 +24,7 @@ $alert =$_GET['alert'] ?? 0;
     <?php require __DIR__ . '/menu.php' ?>
 
     <div class="card">
-        <h5 class="card-header">Banko sąskaitos</h5>
+        <h5 class="card-header">Banko klientai</h5>
         <div class="card-body">
 
             <table class="table">
