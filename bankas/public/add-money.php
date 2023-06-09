@@ -44,7 +44,7 @@ if ($accountId) {
                             <td><?= $account['lastName'] ?></td>
                             <td><?= $account['personalId'] ?></td>
                             <td><?= $account['accountNo'] ?></td>
-                            <td>0 Eur</td>
+                            <td><?= $account['balance'] ?> Eur</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>

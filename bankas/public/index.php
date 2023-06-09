@@ -44,7 +44,7 @@ $accounts = $accounts ? unserialize($accounts) : [];
                             <td><?= $account['lastName'] ?></td>
                             <td><?= $account['personalId'] ?></td>
                             <td><?= $account['accountNo'] ?></td>
-                            <td>0 Eur</td>
+                            <td><?= $account['balance'] ?> Eur</td>
 
                             <td>
                                 <form action="./add-money.php?id=<?= $account['id'] ?>" method="post">
