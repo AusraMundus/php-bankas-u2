@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ];
     $accounts = serialize($accounts);
     file_put_contents(__DIR__ . '/../accounts.ser', $accounts);
-    header('Location: ./index.php?alert=1');
+    header('Location: ./main.php?alert=1');
     die;
 }
 ?>
@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
 
             <div class="col-12 link">
-                <a href="http://localhost/php-bankas-u2/bankas/public/">Grįžti į pagrindinį</a>
+                <a href="http://localhost/php-bankas-u2/bankas/public/main.php">Grįžti į pagrindinį</a>
             </div>
 
         </div>

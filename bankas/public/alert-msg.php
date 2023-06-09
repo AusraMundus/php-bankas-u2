@@ -11,7 +11,7 @@ switch ($alert) {
     break;
 
   case 2:
-    echo '<div class="alert alert-warning" role="alert">Sąskaitoje yra lėšų. Negalima ištrinti.</div>';
+    echo '<div class="alert alert-danger" role="alert">Sąskaitoje yra lėšų. Negalima ištrinti.</div>';
     break;
 
   case 3:
@@ -37,4 +37,5 @@ switch ($alert) {
   case 8:
     echo '<div class="alert alert-warning" role="alert">Įvesta suma negali būti neigiama arba nulinė.</div>';
     break;
+  
 }

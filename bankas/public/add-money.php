@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <td><?= $account['lastName'] ?></td>
                             <td><?= $account['personalId'] ?></td>
                             <td><?= $account['accountNo'] ?></td>
-                            <td><?= $account['balance'] ?> Eur</td>
+                            <td><?= $account['balance'] ?> €</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
 
             <div class="col-12 link">
-                <a href="http://localhost/php-bankas-u2/bankas/public/">Grįžti į pagrindinį</a>
+                <a href="http://localhost/php-bankas-u2/bankas/public/main.php">Grįžti į pagrindinį</a>
             </div>
 
         </div>

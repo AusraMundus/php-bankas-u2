@@ -11986,12 +11986,28 @@ textarea.form-control-lg {
   margin: 50px;
 }
 
+.welcome-align {
+  text-align: center;
+}
+
+.btn-act {
+  width: 300px;
+}
+
 .alert {
-  margin: 50px;
+  margin: 0 50px;
+}
+
+.alert-mini {
+  margin: 16px;
 }
 
 .link {
   margin: 30px 0 15px;
+}
+
+h1, .h1 {
+  font-size: 2em;
 }
 
 a {
