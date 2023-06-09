@@ -3,6 +3,7 @@
 $accounts = file_get_contents(__DIR__ . '/../accounts.ser');
 $accounts = $accounts ? unserialize($accounts) : [];
 
+// Show account details
 $accountId = $_GET['id'] ?? null;
 $account = null;
 if ($accountId) {
@@ -12,6 +13,23 @@ if ($accountId) {
             break;
         }
     }
+}
+
+// Add money
+$accountId = (int)$_GET['id'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    foreach ($accounts as &$a) {
+        if ($a['id'] == $accountId) {
+            $a['balance'] += $_POST['amount'];
+        }
+    }
+    unset($a);
+
+    $accounts = serialize($accounts);
+    file_put_contents(__DIR__ . '/../accounts.ser', $accounts);
+    header('Location: ./add-money.php?id=' . $accountId);
+    die;
 }
 
 ?>
@@ -50,16 +68,20 @@ if ($accountId) {
                 </tbody>
             </table>
 
-            <form class="row g-3" form action="./add-money.php" method="post">
+            <form class="row g-3" form action="./add-money.php?id=<?= $accountId ?>" method="post">
                 <div class="col-12">
-                    <label for="addMoney" class="form-label">Įveskite sumą</label>
-                    <input type="text" class="form-control" name="addMoney" placeholder="...">
+                    <label for="amount" class="form-label">Įveskite sumą</label>
+                    <input type="text" class="form-control" name="amount" placeholder="...">
                 </div>
 
                 <div class="col-12">
                     <button type="submit" class="btn btn-success">PRIDĖTI</button>
                 </div>
             </form>
+
+            <div class="col-12">
+                <a href="http://localhost/php-bankas-u2/bankas/public/">Grįžti į Sąskaitų sąrašą</a>
+            </div>
 
         </div>
     </div>

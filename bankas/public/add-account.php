@@ -1,6 +1,6 @@
 <?php
 
-// Bank account generator
+// IBAN generator
 function generateLithuanianIBAN() {
     $countryCode = 'LT';
     $bankAccountNumber = sprintf('%016d', mt_rand(0, 99999999999999));
@@ -22,7 +22,7 @@ function generateLithuanianIBAN() {
 }
 $accountNo = generateLithuanianIBAN();
 
-// Account data
+// Add account data
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $accounts = file_get_contents(__DIR__ . '/../accounts.ser');
@@ -33,7 +33,7 @@ $accounts[] = [
     'lastName' => $_POST['lastName'],
     'personalId' => $_POST['personalId'],
     'accountNo' => $_POST['accountNo'],
-    'balance' => $_POST['balance'],
+    'balance' => 0,
     'id' => rand(100000000, 999999999)
 ];
 $accounts = serialize($accounts);
@@ -67,15 +67,15 @@ die;
             <form class="row g-3" form action="./add-account.php" method="post">
                 <div class="col-md-6">
                     <label for="firstName" class="form-label">Vardas</label>
-                    <input type="text" class="form-control" name="firstName" placeholder="...">
+                    <input type="text" class="form-control" name="firstName" placeholder="Įveskite vardą">
                 </div>
                 <div class="col-md-6">
                 <label for="lastName" class="form-label">Pavardė</label>
-                    <input type="text" class="form-control" name="lastName" placeholder="...">
+                    <input type="text" class="form-control" name="lastName" placeholder="Įveskite pavardę">
                 </div>
                 <div class="col-md-6">
                     <label for="personalId" class="form-label">Asmens kodas</label>
-                    <input type="text" class="form-control" name="personalId" placeholder="...">
+                    <input type="text" class="form-control" name="personalId" placeholder="Įveskite asmens kodą">
                 </div>
                 <div class="col-md-6">
                     <label for="accountNo" class="form-label">Banko sąskaitos numeris</label>
@@ -83,7 +83,7 @@ die;
                 </div>
                 <div class="col-md-6">
                     <label for="balance" class="form-label">Balansas</label>
-                    <input type="text" class="form-control" name="balance" placeholder="0 Eur">
+                    <input type="text" class="form-control" name="balance" aria-label="input example" readonly placeholder="0 €">
                 </div>
                 <div class="col-12">
                     <button type="submit" class="btn btn-success">IŠSAUGOTI</button>
