@@ -3,6 +3,8 @@
 $accounts = file_get_contents(__DIR__ . '/../accounts.ser');
 $accounts = $accounts ? unserialize($accounts) : [];
 
+$alert =$_GET['alert'] ?? 0;
+
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +73,7 @@ $accounts = $accounts ? unserialize($accounts) : [];
         </div>
     </div>
 
-
+    <div><?php require __DIR__ .'/alert-msg.php'?></div>
 
 </body>
 

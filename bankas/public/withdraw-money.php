@@ -3,6 +3,8 @@
 $accounts = file_get_contents(__DIR__ . '/../accounts.ser');
 $accounts = $accounts ? unserialize($accounts) : [];
 
+$alert =$_GET['alert'] ?? 0;
+
 // Show account details
 $accountId = $_GET['id'] ?? null;
 $account = null;
@@ -21,8 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     foreach ($accounts as &$a) {
         if ($a['id'] == $accountId) {
-            if ($a['balance'] > $_POST['amount']) {
+            if ($a['balance'] >= $_POST['amount']) {
                 $a['balance'] -= $_POST['amount'];
+            } else {
+                header('Location: ./withdraw-money.php?id=' . $accountId . '&alert=4');
+                die;
             }
         }
     }
@@ -73,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <form class="row g-3" form action="./withdraw-money.php?id=<?= $accountId ?>" method="post">
                 <div class="col-12">
                     <label for="amount" class="form-label">Įveskite sumą</label>
-                    <input type="text" class="form-control" name="amount" placeholder="...">
+                    <input type="number" class="form-control" name="amount" placeholder="...">
                 </div>
 
                 <div class="col-12">
@@ -87,6 +92,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         </div>
     </div>
+
+    <div><?php require __DIR__ .'/alert-msg.php'?></div>
 
 </body>
 

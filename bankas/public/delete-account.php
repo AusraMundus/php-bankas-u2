@@ -4,12 +4,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $accounts = file_get_contents(__DIR__ . '/../accounts.ser');
     $accounts = $accounts ? unserialize($accounts) : [];
-    $id = (int) $_GET['id'];
+    $accountId = $_GET['id'];
 
-    $accounts = array_filter($accounts, fn ($acc) => $id != $acc['id']);
+    foreach ($accounts as $acc) {
+        if($acc['id'] == $accountId) {
+            if($acc['balance'] === 0) {
+                $accounts = array_filter($accounts, fn ($a) => $a['id'] != $accountId);
+            } else {
+                header('Location: ./index.php?alert=2');
+                die;
+            }
+        }
+    }
 
     $accounts = serialize($accounts);
     file_put_contents(__DIR__ . '/../accounts.ser', $accounts);
-    header('Location: ./');
+    header('Location: ./index.php?alert=3');
     die;
 }
