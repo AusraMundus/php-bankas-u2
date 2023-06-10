@@ -10,7 +10,7 @@ function generateLithuanianIBAN()
 
     $accountNo = $countryCode . '00' . $bankAccountNumber;
 
-    // Calculate the checksum digits
+
     $ibanDigits = str_split($accountNo);
     $checksum = 0;
     foreach ($ibanDigits as $digit) {
@@ -18,8 +18,7 @@ function generateLithuanianIBAN()
     }
     $checksumDigits = sprintf('%02d', 98 - $checksum);
 
-    // Replace the placeholder checksum with the calculated checksum digits
-    $accountNumber = substr_replace($accountNo, $checksumDigits, 2, 2);
+    $accountNo = substr_replace($accountNo, $checksumDigits, 2, 2);
 
     return $accountNo;
 }

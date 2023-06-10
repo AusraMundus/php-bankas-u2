@@ -30,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     die;
 }
 
-// alert zinute
 if (isset($_SESSION['alert'])) {
     $alert = $_SESSION['alert'];
     unset($_SESSION['alert']);
