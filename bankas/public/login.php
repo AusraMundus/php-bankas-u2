@@ -90,6 +90,7 @@ if (isset($_SESSION['alert'])) {
                     <?php if ($alert) : ?>
                         <h6><?= $alert ?></h6>
                     <?php endif ?>
+                    
                 </div>
             </div>
         </div>

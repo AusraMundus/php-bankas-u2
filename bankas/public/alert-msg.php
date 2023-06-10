@@ -38,4 +38,12 @@ switch ($alert) {
     echo '<div class="alert alert-warning" role="alert">Įvesta suma turi būti teigiamas sveikasis skaičius.</div>';
     break;
   
+  case 9:
+    echo '<div class="alert alert-success" role="alert">Į sąskaitą pridėta lėšų.</div>';
+    break;
+
+  case 10:
+    echo '<div class="alert alert-success" role="alert">Iš sąskaitos išimta lėšų.</div>';
+    break;
+
 }

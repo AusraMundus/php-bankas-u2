@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="row justify-content-center">
             <div class="col-10">
                 <div class="card">
-                    <h5 class="card-header">Pridėkite lėšų</h5>
+                    <h5 class="card-header">Pridėkite lėšų į sąskaitą</h5>
                     <div class="card-body">
 
                         <table class="table">

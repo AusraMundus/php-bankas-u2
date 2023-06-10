@@ -16,7 +16,7 @@ $alert = $_GET['alert'] ?? 0;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="app.css">
     <script src="app.js"></script>
-    <title>Pagrindinis</title>
+    <title>Administravimo panelė</title>
 </head>
 
 <body>
@@ -52,7 +52,7 @@ $alert = $_GET['alert'] ?? 0;
                                         <td><?= $account['accountNo'] ?></td>
                                         <td>
                                             <div class="input-group">
-                                                <div class="form-control text-end"><?= $account['balance'] ?></div>
+                                                <div class="form-control text-end balance-bg"><?= $account['balance'] ?></div>
                                                 <span class="input-group-text">€</span>
                                             </div>
                                         </td>
