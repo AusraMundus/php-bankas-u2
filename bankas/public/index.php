@@ -23,7 +23,7 @@ session_start();
         <div class="row justify-content-center">
             <div class="col-8">
                 <div class="card">
-                    <div class="card-header welcome-align navbar-brand">
+                    <div class="card-header welcome-align navbar-brand text-wrap">
                         <img src="logo.png" alt="logo">
                         <h1>Easy Way To Manage Bank Accounts</h1>
                     </div>

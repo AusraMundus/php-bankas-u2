@@ -1,6 +1,6 @@
 <?php
 
-$alert =$_GET['alert'] ?? 0;
+$alert = $_GET['alert'] ?? 0;
 
 // IBAN generator
 function generateLithuanianIBAN()
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: ./add-account.php?alert=6');
         die;
     }
-    
+
     // Check if the first and last name longer than 3 characters
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
@@ -83,45 +83,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
     <?php require __DIR__ . '/menu.php' ?>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10">
 
-    <div class="card">
-        <h5 class="card-header">Pridėkite naują sąskaitą</h5>
-        <div class="card-body">
+                <div class="card">
+                    <h5 class="card-header">Pridėkite naują sąskaitą</h5>
+                    <div class="card-body">
 
-            <form class="row g-3" form action="./add-account.php" method="post">
-                <div class="col-md-4">
-                    <label for="firstName" class="form-label">Vardas</label>
-                    <input type="text" class="form-control" name="firstName" placeholder="Įveskite vardą">
-                </div>
-                <div class="col-md-4">
-                    <label for="lastName" class="form-label">Pavardė</label>
-                    <input type="text" class="form-control" name="lastName" placeholder="Įveskite pavardę">
-                </div>
-                <div class="col-md-4">
-                    <label for="personalId" class="form-label">Asmens kodas</label>
-                    <input type="text" class="form-control" name="personalId" placeholder="Įveskite asmens kodą">
-                </div>
-                <div class="col-md-6">
-                    <label for="accountNo" class="form-label">Banko sąskaitos numeris</label>
-                    <input type="text" class="form-control" name="accountNo" aria-label="input example" value="<?= $accountNo ?>" readonly>
-                </div>
-                <div class="col-md-6">
-                    <label for="balance" class="form-label">Balansas</label>
-                    <input type="text" class="form-control" name="balance" aria-label="input example" readonly placeholder="0 €">
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-success">IŠSAUGOTI</button>
-                </div>
-            </form>
+                        <form class="row g-3" form action="./add-account.php" method="post">
+                            <div class="col-md-4">
+                                <label for="firstName" class="form-label">Vardas</label>
+                                <input type="text" class="form-control" name="firstName" placeholder="Įveskite vardą">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="lastName" class="form-label">Pavardė</label>
+                                <input type="text" class="form-control" name="lastName" placeholder="Įveskite pavardę">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="personalId" class="form-label">Asmens kodas</label>
+                                <input type="text" class="form-control" name="personalId" placeholder="Įveskite asmens kodą">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="accountNo" class="form-label">Banko sąskaitos numeris</label>
+                                <input type="text" class="form-control" name="accountNo" aria-label="input example" value="<?= $accountNo ?>" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="balance" class="form-label">Balansas</label>
+                                <input type="text" class="form-control" name="balance" aria-label="input example" readonly placeholder="0 €">
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success">IŠSAUGOTI</button>
+                            </div>
+                        </form>
 
-            <div class="col-12 link">
-                <a href="http://localhost/php-bankas-u2/bankas/public/main.php">Grįžti į pagrindinį</a>
+                    </div>
+                </div>
+
+                <div class="link btn btn-light">
+                    <a href="http://localhost/php-bankas-u2/bankas/public/main.php">Grįžti į pagrindinį</a>
+                </div>
+
+                <div><?php require __DIR__ . '/alert-msg.php' ?></div>
+
             </div>
-
         </div>
     </div>
-
-    <div><?php require __DIR__ .'/alert-msg.php'?></div>
 
 </body>
 

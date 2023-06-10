@@ -58,7 +58,7 @@ if (isset($_SESSION['alert'])) {
             <div class="col-8">
                 <div class="card">
 
-                    <div class="card-header welcome-align navbar-brand">
+                    <div class="card-header welcome-align navbar-brand text-wrap">
                         <img src="logo.png" alt="logo">
                         <h1>Įveskite prisijungimo duomenis</h1>
                     </div>

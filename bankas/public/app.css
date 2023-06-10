@@ -11983,7 +11983,7 @@ textarea.form-control-lg {
   }
 }
 .card {
-  margin: 50px;
+  margin: 30px 0;
 }
 
 .welcome-align {
@@ -11995,15 +11995,11 @@ textarea.form-control-lg {
 }
 
 .alert {
-  margin: 0 50px;
+  margin: 30px 0;
 }
 
 .alert-mini {
   margin: 16px;
-}
-
-.link {
-  margin: 30px 0 15px;
 }
 
 h1, .h1 {
@@ -12025,4 +12021,8 @@ a:hover {
 
 td {
   line-height: 35px;
+}
+
+.form-label {
+  font-weight: 500;
 }

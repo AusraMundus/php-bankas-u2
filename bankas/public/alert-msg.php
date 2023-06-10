@@ -7,11 +7,11 @@ switch ($alert) {
     break;
 
   case 1:
-    echo '<div class="alert alert-success" role="alert">Nauja sąskaita sukurta.</div>';
+    echo '<div class="alert alert-success" role="alert">Nauja vartotojo sąskaita sukurta.</div>';
     break;
 
   case 2:
-    echo '<div class="alert alert-danger" role="alert">Sąskaitoje yra lėšų. Negalima ištrinti.</div>';
+    echo '<div class="alert alert-danger" role="alert">Sąskaitoje yra lėšų. Ištrinti negalima.</div>';
     break;
 
   case 3:
@@ -35,7 +35,7 @@ switch ($alert) {
     break;
 
   case 8:
-    echo '<div class="alert alert-warning" role="alert">Įvesta suma negali būti neigiama arba nulinė.</div>';
+    echo '<div class="alert alert-warning" role="alert">Įvesta suma turi būti teigiamas sveikasis skaičius.</div>';
     break;
   
 }

@@ -23,57 +23,72 @@ $alert = $_GET['alert'] ?? 0;
 
     <?php require __DIR__ . '/menu.php' ?>
 
-    <div class="card">
-        <h5 class="card-header">Banko klientai</h5>
-        <div class="card-body">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Vardas</th>
-                        <th scope="col">Pavardė</th>
-                        <th scope="col">Asmens kodas</th>
-                        <th scope="col">Sąskaitos Nr.</th>
-                        <th scope="col">Balansas</th>
-                        <th colspan="2" class="text-center">Disponavimas lėšomis</th>
-                        <th scope="col" class="text-center">Sąskaitos panaikinimas</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($accounts as $account) : ?>
-                        <tr>
-                            <td><?= $account['firstName'] ?></td>
-                            <td><?= $account['lastName'] ?></td>
-                            <td><?= $account['personalId'] ?></td>
-                            <td><?= $account['accountNo'] ?></td>
-                            <td><?= $account['balance'] ?> €</td>
+                <div class="card">
+                    <h5 class="card-header">Banko klientai</h5>
+                    <div class="card-body">
 
-                            <td>
-                                <form class="text-end" action="./add-money.php?id=<?= $account['id'] ?>" method="post">
-                                    <button class="btn btn-outline-success">PRIDĖTI</button>
-                                </form>
-                            </td>
+                        <table class="table">
+                            <thead class="text-wrap">
+                                <tr>
+                                    <th scope="col">Vardas</th>
+                                    <th scope="col">Pavardė</th>
+                                    <th scope="col">Asmens kodas</th>
+                                    <th scope="col">Sąskaitos Nr.</th>
+                                    <th scope="col" class="text-center">Balansas</th>
+                                    <th colspan="2" class="text-center">Disponavimas lėšomis</th>
+                                    <th scope="col" class="text-center">Sąskaitos panaikinimas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($accounts as $account) : ?>
+                                    <tr>
+                                        <td><?= $account['firstName'] ?></td>
+                                        <td><?= $account['lastName'] ?></td>
+                                        <td><?= $account['personalId'] ?></td>
+                                        <td><?= $account['accountNo'] ?></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <div class="form-control text-end"><?= $account['balance'] ?></div>
+                                                <span class="input-group-text">€</span>
+                                            </div>
+                                        </td>
 
-                            <td>
-                                <form action="./withdraw-money.php?id=<?= $account['id'] ?>" method="post">
-                                    <button class="btn btn-outline-secondary">IŠIMTI</button>
-                                </form>
-                            </td>
 
-                            <td>
-                                <form class="text-center" action="./delete-account.php?id=<?= $account['id'] ?>" method="post">
-                                    <button type="submit" class="btn btn-outline-danger">IŠTRINTI</button>
-                                </form>
-                            </td>
-                        </tr>
-                    <?php endforeach ?>
-                </tbody>
-            </table>
 
+                                        <td>
+                                            <form class="text-end" action="./add-money.php?id=<?= $account['id'] ?>" method="post">
+                                                <button class="btn btn-outline-success">PRIDĖTI</button>
+                                            </form>
+                                        </td>
+
+                                        <td>
+                                            <form action="./withdraw-money.php?id=<?= $account['id'] ?>" method="post">
+                                                <button class="btn btn-outline-secondary">IŠIMTI</button>
+                                            </form>
+                                        </td>
+
+                                        <td>
+                                            <form class="text-center" action="./delete-account.php?id=<?= $account['id'] ?>" method="post">
+                                                <button type="submit" class="btn btn-outline-danger">IŠTRINTI</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div><?php require __DIR__ . '/alert-msg.php' ?></div>
+
+            </div>
         </div>
     </div>
-
-    <div><?php require __DIR__ . '/alert-msg.php' ?></div>
 
 </body>
 
