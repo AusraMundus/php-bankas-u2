@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-warning">IŠIMTI</button>
+                    <button type="submit" class="btn btn-secondary">IŠIMTI</button>
                 </div>
             </form>
 

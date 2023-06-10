@@ -32,7 +32,7 @@ session_start();
 
                             <?php if (isset($_SESSION['email'])) : ?>
                                 <div>
-                                    <a class="btn btn-secondary btn-act" href="http://localhost/php-bankas-u2/bankas/public/main.php">Grįžti į administravimo panelę</a>
+                                    <a class="btn btn-outline-secondary btn-act" href="http://localhost/php-bankas-u2/bankas/public/main.php">Grįžti į administravimo panelę</a>
                                 </div>
                                 <form action="http://localhost/php-bankas-u2/bankas/public/login.php?logout" method="post">
                                     <button type="submit" class="btn btn-dark btn-act">Atsijungti "<?= $_SESSION['email'] ?>"</button>

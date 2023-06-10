@@ -50,19 +50,19 @@ $alert = $_GET['alert'] ?? 0;
 
                             <td>
                                 <form class="text-end" action="./add-money.php?id=<?= $account['id'] ?>" method="post">
-                                    <button class="btn btn-success">PRIDĖTI</button>
+                                    <button class="btn btn-outline-success">PRIDĖTI</button>
                                 </form>
                             </td>
 
                             <td>
                                 <form action="./withdraw-money.php?id=<?= $account['id'] ?>" method="post">
-                                    <button class="btn btn-warning">IŠIMTI</button>
+                                    <button class="btn btn-outline-secondary">IŠIMTI</button>
                                 </form>
                             </td>
 
                             <td>
                                 <form class="text-center" action="./delete-account.php?id=<?= $account['id'] ?>" method="post">
-                                    <button type="submit" class="btn btn-danger">IŠTRINTI</button>
+                                    <button type="submit" class="btn btn-outline-danger">IŠTRINTI</button>
                                 </form>
                             </td>
                         </tr>
