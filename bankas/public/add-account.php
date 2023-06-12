@@ -30,18 +30,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $accounts = file_get_contents(__DIR__ . '/../accounts.ser');
     $accounts = $accounts ? unserialize($accounts) : [];
 
-    // Check if personal Id has numbers and is 11 digits long
-    $personalId = $_POST['personalId'];
-    if (!ctype_digit($personalId) || strlen(trim($personalId)) !== 11) {
-        header('Location: ./add-account.php?alert=6');
-        die;
-    }
-
     // Check if the first and last name longer than 3 characters
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     if (strlen($firstName) < 3 || strlen($lastName) < 3) {
         header('Location: ./add-account.php?alert=5');
+        die;
+    }
+
+    // Check if personal Id has numbers and is 11 digits long
+    $personalId = $_POST['personalId'];
+    if (!ctype_digit($personalId) || strlen(trim($personalId)) !== 11) {
+        header('Location: ./add-account.php?alert=6');
         die;
     }
 
